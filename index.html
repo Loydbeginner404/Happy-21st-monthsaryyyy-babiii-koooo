@@ -1,0 +1,256 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 21st Monthsary 🤍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Parisienne&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="fx"></canvas>
+<div id="bgPetals"></div>
+<div id="confetti"></div>
+
+<section id="lock" class="screen">
+  <div class="card lockCard">
+    <div class="bigHeart">🤍</div>
+    <h1 class="script">Happy 21st Monthsary</h1>
+    <p>Before you open this, enter our special password.</p>
+    <input id="pw" type="password" inputmode="numeric" placeholder="Password" autocomplete="off">
+    <button id="unlockBtn" class="btn">Unlock My Heart</button>
+    <button id="hintBtn" class="linkBtn">Need a hint? 🥺</button>
+    <p id="pwMsg" class="msg"></p>
+  </div>
+</section>
+
+<section id="intro" class="screen hidden">
+  <p id="introText" class="introText script"></p>
+</section>
+
+<section id="envScreen" class="screen hidden">
+  <div class="envWrap">
+    <div id="envelope">
+      <div class="envBack"></div>
+      <div class="envLetter">
+        <span>💌</span>
+        <h3 class="script">For My Babiii</h3>
+        <p>Tap me 🤍</p>
+      </div>
+      <div class="envFront"></div>
+      <div class="envFlap"></div>
+      <div class="waxSeal">🤍</div>
+    </div>
+    <p class="tapHint">Tap the envelope to open</p>
+  </div>
+</section>
+
+<main id="main" class="hidden">
+
+  <header class="hero">
+    <p class="eyebrow">For the one I love the most</p>
+    <h1 class="script">Happy 21st Monthsary</h1>
+    <p class="sub">Every moment with you is my favorite memory.</p>
+  </header>
+
+  <section class="block">
+    <h2 class="title">We've been together for</h2>
+    <div class="counter">
+      <div><b id="cMonths">0</b><span>Months</span></div>
+      <div><b id="cDays">0</b><span>Days</span></div>
+      <div><b id="cHours">0</b><span>Hours</span></div>
+      <div><b id="cMins">0</b><span>Minutes</span></div>
+      <div><b id="cSecs">0</b><span>Seconds</span></div>
+    </div>
+    <p class="sub small">…and we're nowhere near done 🤍</p>
+  </section>
+
+  <section class="block">
+    <h2 class="title">Our Memories 📸</h2>
+    <div class="galleryWrap">
+      <button class="navBtn" id="gPrev" aria-label="Previous">‹</button>
+      <div id="gallery" class="gallery">
+
+        <div class="polaroid" style="--r:-2.5deg">
+          <img src="me and babiii.jpg" alt="">
+          <p>My favorite memory</p>
+        </div>
+
+        <div class="polaroid" style="--r:2.5deg">
+          <img src="still.jpeg" alt="">
+          <p>Still my favorite person</p>
+        </div>
+
+        <div class="polaroid" style="--r:-2.5deg">
+          <img src="me and my asawa.png" alt="">
+          <p>I was so kilig here</p>
+        </div>
+
+        <div class="polaroid" style="--r:2.5deg">
+          <img src="babiii.jpeg" alt="">
+          <p>That smile of yours</p>
+        </div>
+
+        <div class="polaroid" style="--r:-2.5deg">
+          <img src="babiii1.jpeg" alt="">
+          <p>Just the two of us</p>
+        </div>
+
+        <div class="polaroid" style="--r:2.5deg">
+          <img src="homeee.jpeg" alt="">
+          <p>Where I feel most at home</p>
+        </div>
+
+        <div class="polaroid" style="--r:-2.5deg">
+          <img src="mybabiii.jpeg" alt="">
+          <p>My babiii</p>
+        </div>
+
+        <div class="polaroid" style="--r:2.5deg">
+          <img src="babiii21.jpeg" alt="">
+          <p>21 months and counting</p>
+        </div>
+
+      </div>
+      <button class="navBtn" id="gNext" aria-label="Next">›</button>
+    </div>
+    <p class="sub small" id="gCount">Swipe 🤍</p>
+  </section>
+
+  <section class="block center">
+    <h2 class="title">Press me 🥺</h2>
+    <button id="loveBtn" class="btn big">🤍 Love Me</button>
+    <p id="loveMsg" class="loveMsg script"></p>
+    <p class="sub small" id="loveCount"></p>
+  </section>
+
+  <section class="block center">
+    <h2 class="title">Quick question… 💭</h2>
+    <p class="bigQ script">Do you love me?</p>
+    <div id="qArea" class="qArea">
+      <button id="yesBtn" class="btn">YES 🤍</button>
+      <button id="noBtn" class="btn ghost">No 😝</button>
+    </div>
+    <p id="qMsg" class="msg"></p>
+  </section>
+
+  <section class="block">
+    <h2 class="title">21 Reasons Why I Love You</h2>
+    <p class="sub small">One for every month. Tap the cards babiii ko🤍</p>
+    <div id="reasons" class="reasons"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="title">Our Journey </h2>
+    <div id="timeline" class="timeline"></div>
+    <span id="secretHeart" class="secretHeart" title="">🤍</span>
+  </section>
+
+  <section class="block">
+    <h2 class="title">Open When… </h2>
+    <div id="openWhen" class="openWhen"></div>
+  </section>
+
+  <section class="block center">
+    <h2 class="title">Catch the Hearts 🎮</h2>
+    <p class="sub small">Catch 15 hearts in 20 seconds!</p>
+    <div class="gameBar">
+      <span>Score: <b id="gScore">0</b></span>
+      <span>Time: <b id="gTime">20</b></span>
+    </div>
+    <div id="gameArea" class="gameArea"><p class="gameHint">Press start 🤍</p></div>
+    <button id="gameBtn" class="btn">Start Game</button>
+    <p id="gameMsg" class="msg"></p>
+  </section>
+
+  <section class="block center">
+    <h2 class="title">Scratch & Reveal 🎟️</h2>
+    <p class="sub small">Scratch each card with your finger 🤍</p>
+    <div class="scratchGrid">
+
+      <div class="scratch">
+        <div class="under">
+          <span></span>
+          <p class="script">You're my favorite hello and my hardest goodbye.</p>
+        </div>
+        <canvas></canvas>
+      </div>
+
+      <div class="scratch">
+        <div class="under">
+          <span></span>
+          <p class="script">I'd choose you in every lifetime.</p>
+        </div>
+        <canvas></canvas>
+      </div>
+
+      <div class="scratch">
+        <div class="under">
+          <span>️</span>
+          <p class="script">unlimited hug and unlimited kiss, anytime, anywhere 😘</p>
+        </div>
+        <canvas></canvas>
+      </div>
+
+    </div>
+    <p id="scratchMsg" class="msg"></p>
+  </section>
+
+  <section class="block center">
+    <h2 class="title">My Promises </h2>
+    <div id="promises" class="promises"></div>
+    <button id="promiseBtn" class="btn">Next Promise 🤍</button>
+  </section>
+
+  <section class="block center">
+    <div class="quote">
+      <p class="script">“No matter how many months pass, I'll still choose to fall in love with you again and again.”</p>
+    </div>
+  </section>
+
+  <section class="block center last">
+    <h2 class="title">One last surprise </h2>
+    <button id="finalBtn" class="btn big">Open My Surprise</button>
+  </section>
+
+  <footer>
+    <button id="musicBtn" class="musicFab" aria-label="Music">🎵</button>
+  </footer>
+</main>
+
+<div id="modal" class="overlay hidden">
+  <div class="card modalCard">
+    <h2 id="mTitle" class="script"></h2>
+    <p id="mBody"></p>
+    <button id="mClose" class="btn">Close 🤍</button>
+  </div>
+</div>
+
+<div id="final" class="overlay hidden">
+  <div class="card finalCard">
+    <div id="finalStep1">
+      <h2 class="script">This is really the last one…</h2>
+      <p class="bigQ script">Will you still choose me tomorrow?</p>
+      <div id="fArea" class="qArea">
+        <button id="fYes" class="btn">YES, ALWAYS 🤍</button>
+        <button id="fNo" class="btn ghost">Hmm… 🤔</button>
+      </div>
+    </div>
+    <div id="finalStep2" class="hidden">
+      <h2 class="script">Happy 21st Monthsary</h2>
+      <p id="finalText" class="letter"></p>
+      <button id="finalClose" class="btn">Back 🤍</button>
+    </div>
+  </div>
+</div>
+
+<audio id="music" loop>
+  <source src="Beautiful In White - Shane Filan (Lyrics).mp3.m4a" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
